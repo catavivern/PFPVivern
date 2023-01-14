@@ -1,0 +1,36 @@
+{% extends "AppAccounts/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Travellina</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<h3>Formulario de registro</h3>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'signup' %}" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{ form.as_table }}
+
+    </table>
+
+    <input type="submit" value="Crear un usuario">
+
+</form>>
+
+
+                
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,32 @@
+<link href="../../../static/AppAccounts/css/styles.css" rel="stylesheet" />
+
+
+{% extends "AppAccounts/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Agregando foto de perfil de: {{ usuario.username }} </h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'addAvatar'  %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+
+    <table>
+    
+        {{ form.as_table }}
+    
+    </table>
+    
+    <input type="submit" value="Agregar foto de perfil">
+    
+    
+    </form>
+
+    {{ mensaje }}
+
+
+{% endblock %}

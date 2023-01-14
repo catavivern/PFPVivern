@@ -1,0 +1,30 @@
+{% extends "AppMessages/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Travellina</h1>
+{% endblock %}
+
+{% block subtitulo %}
+
+<h3>Chat</h3>
+<p> Utilizalo para comunicarte con los demás usuarios!</p>
+
+<h1>{{ mensaje }}</h1>
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>Mensajes recibidos</h1>
+
+<form action="{% url 'recibir' %}" method="GET"> 
+
+    <input type="text" name="receptor" id="receptor" placeholder="Ingrese su nombre">
+
+    <input type="submit" value="Buscar mensajes recibidos">
+
+
+</form>
+
+{% endblock %}

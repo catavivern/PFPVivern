@@ -1,0 +1,28 @@
+{% extends "AppMessages/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Travellina</h1>
+{% endblock %}
+
+{% block subtitulo %}
+
+<h3>Chat</h3>
+<p> Utilizalo para comunicarte con los demás usuarios!</p>
+
+<h1>{{ mensaje }}</h1>
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>Chat</h1>
+<a class="btn btn-dark" href="{% url 'enviarMensaje'%}">Enviar mensaje</a>
+<a class="btn btn-dark" href="{% url 'recibirMensajes'%}">Mensajes recibidos</a>
+                
+
+
+{% endblock %}
+
+
+

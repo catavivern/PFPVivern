@@ -1,0 +1,24 @@
+{% extends "AppBlogs/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Travellina</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<h3> Blogs</h3>
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>Blog: {{ blog.titulo }}</h1>
+<h2>{{ blog.subtitulo }}</h2>
+<p>{{ blog.cuerpo }}<p>
+
+<img src="../../../media/{{ blog.imagen }}" alt="{{ blog.imagen }}">
+
+{% endblock %}
+
+
+

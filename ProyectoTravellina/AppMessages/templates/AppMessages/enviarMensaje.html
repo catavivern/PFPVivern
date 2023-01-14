@@ -1,0 +1,27 @@
+{% extends "AppMessages/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Enviar mensaje</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'enviarMensaje' %}" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{ form.as_table }}
+    
+    </table>
+
+    <input type="submit" value="Enviar mensaje">
+
+
+</form>
+
+
+{% endblock %}

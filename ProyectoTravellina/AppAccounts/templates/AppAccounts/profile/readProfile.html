@@ -1,0 +1,19 @@
+<link href="../../../static/AppAccounts/css/styles.css" rel="stylesheet" />
+
+{% extends "AppAccounts/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5"> Su perfil </h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3> {{ user.username }} </h3>
+<p> {{ user.email }} </p>
+
+
+<img src="{{avatar}}" alt="{{avatar}}">
+
+{% endblock %}

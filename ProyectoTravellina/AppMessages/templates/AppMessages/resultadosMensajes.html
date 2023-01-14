@@ -1,0 +1,38 @@
+{% extends "AppMessages/padre.html" %}
+
+{% load static %}
+
+{% if mensajes %}
+
+{% block titulo %}
+<h1 class="mb-5"> Mensajes recibidos: {{ mensaje.receptor }}</h1>
+{% endblock %}
+{% endif %}
+
+{% block contenido_que_cambia %}
+
+{% if mensajes %}
+
+<h2> Mensajes recibidos: {{ mensaje.receptor }} </h2>
+{% for mensaje in mensajes %}
+
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading"> {{ mensaje.cuerpo }} </h4>
+    <p>     De: {{ mensaje.emisor }}| Para: {{ mensaje.receptor }} </p>
+    <img src="../../static/AppMessages/assets/img/DoubleCheckBlue.jpg" alt="Double Check Blue" height="20"> 
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<h2>No hay mensajes</h2>
+
+{% endif %}
+
+
+
+    
+
+{% endblock %}

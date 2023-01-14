@@ -1,0 +1,31 @@
+{% extends "AppBlogs/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Travellina</h1>
+{% endblock %}
+
+{% block subtitulo %}
+<h3> Blogs</h3>
+<h1>{{ mensaje }}</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>Blogs</h1>
+{% for blog in blogs %}
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="../../../media/{{blog.imagen }}" alt="{{ blog.imagen }}">
+    <div class="card-body">
+      <h5 class="card-title">{{blog.titulo}}</h5>
+      <p class="card-text">{{ blog.subtitulo }}</p>
+      <a href="{% url 'leerMasBlog'  blog.id %}" class="btn btn-primary">Leer mas</a>
+    
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
+
+
+
